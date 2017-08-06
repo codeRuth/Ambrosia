@@ -8,4 +8,5 @@
     <color name="textSecondary">#727272</color>
     <color name="white">#fff</color>
     <color name="background">#dae2e2e2</color>
+    <color name="switchOn">#00c853</color>
 </resources>

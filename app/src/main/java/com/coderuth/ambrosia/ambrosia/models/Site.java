@@ -6,14 +6,13 @@ package com.coderuth.ambrosia.ambrosia.models;
 public class Site {
 
     private String name, singer, year, url;
-    private int pic, rank;
+    private int rank;
 
-    public Site(String name, String singer, String url, int pic){
+    public Site(String name, String singer, String url){
 
         this.name = name;
         this.singer = singer;
         this.url = url;
-        this.pic = pic;
 
     }
 
@@ -31,14 +30,6 @@ public class Site {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getPic() {
-        return pic;
-    }
-
-    public void setPic(int pic) {
-        this.pic = pic;
     }
 
     public String getSinger() {

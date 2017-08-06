@@ -1,4 +1,4 @@
-package com.coderuth.ambrosia.ambrosia;
+package com.coderuth.ambrosia.ambrosia.listeners;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

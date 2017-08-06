@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +26,7 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.ViewHolder> {
     private ColorGenerator generator = ColorGenerator.MATERIAL;
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        public TextView tvRank,tvSongName,tvSinger,buttonOption, url;
+        public TextView tvRank, tvSongName,buttonOption, tvSinger, url;
         public ImageView letter;
 
         public ViewHolder(View v) {

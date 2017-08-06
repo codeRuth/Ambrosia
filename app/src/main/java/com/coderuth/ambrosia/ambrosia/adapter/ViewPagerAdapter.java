@@ -1,4 +1,4 @@
-package com.coderuth.ambrosia.ambrosia;
+package com.coderuth.ambrosia.ambrosia.adapter;
 
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
