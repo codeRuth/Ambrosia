@@ -13,9 +13,9 @@ public class AddTrackerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        this.getActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        getSupportActionBar().setIcon(R.drawable.edit); // or setLogo()
         mBtGoBack = (Button) findViewById(R.id.bt_go_back);
-
         mBtGoBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

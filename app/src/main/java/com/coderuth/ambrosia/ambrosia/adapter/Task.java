@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +17,7 @@ import com.coderuth.ambrosia.ambrosia.R;
 import com.coderuth.ambrosia.ambrosia.models.Site;
 import java.util.List;
 
-public class SongAdapter extends RecyclerView.Adapter<SongAdapter.ViewHolder> {
+public class Task extends RecyclerView.Adapter<Task.ViewHolder> {
 
     private List<Site> songList;
     private Context mCtx;
@@ -26,12 +25,12 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.ViewHolder> {
     private ColorGenerator generator = ColorGenerator.MATERIAL;
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        public TextView tvRank, tvSongName,buttonOption, tvSinger, url;
+        public TextView tvRank, tvSongName,buttonOption, tvSinger;
         public ImageView letter;
 
         public ViewHolder(View v) {
             super(v);
-            tvRank = (TextView)v.findViewById(R.id.textView2);
+            tvRank = (TextView) v.findViewById(R.id.textView2);
             tvSongName = (TextView) v.findViewById(R.id.title);
             tvSinger = (TextView) v.findViewById(R.id.category);
             letter = (ImageView) v.findViewById(R.id.imageView);
@@ -39,20 +38,20 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.ViewHolder> {
         }
     }
 
-    public SongAdapter(List<Site> songList, Context mCtx){
+    public Task(List<Site> songList, Context mCtx){
         this.songList = songList;
         this.mCtx = mCtx;
     }
 
     @Override
-    public SongAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.song_list_item,parent,false);
+    public Task.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_list_item,parent,false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
 
     @Override
-    public void onBindViewHolder(final SongAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(final Task.ViewHolder holder, final int position) {
         Site song = songList.get(position);
         String letter = String.valueOf(song.getName().charAt(0));
         popup = new PopupMenu(mCtx, holder.buttonOption);
@@ -70,16 +69,12 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.ViewHolder> {
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
-
                         switch (item.getItemId()) {
                             case R.id.menu1:
                                 Toast.makeText(mCtx, "Saved", Toast.LENGTH_LONG).show();
                                 break;
                             case R.id.menu2:
                                 Toast.makeText(mCtx, "Deleted", Toast.LENGTH_LONG).show();
-                                break;
-                            case R.id.menu3:
-                                Toast.makeText(mCtx, "Saved", Toast.LENGTH_LONG).show();
                                 break;
                             default:
                                 break;

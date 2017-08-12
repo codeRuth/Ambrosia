@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
+            <FrameLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -41,7 +41,8 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/textView2"
                         android:password="false"
-                        android:maxLines="1" />
+                        android:maxLines="1"
+                        android:autoLink="web" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -49,7 +50,8 @@
                         android:baselineAligned="false"
                         android:id="@+id/movieListItem"
                         android:focusable="true"
-                        android:paddingLeft="15dp"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="10dp"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
                         android:gravity="center"
@@ -67,6 +69,7 @@
                                 android:orientation="horizontal"
                                 android:gravity="bottom"
                                 android:layout_below="@+id/title"
+                                android:layout_marginTop="-1dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
@@ -97,10 +100,11 @@
 
                             <TextView
                                 android:id="@+id/title"
-                                android:textColor="@android:color/black"
-                                android:textSize="14sp"
-                                android:textAllCaps="true"
+                                android:textColor="@color/titleColor"
+                                android:textSize="16sp"
                                 android:maxLines="2"
+                                android:textStyle="bold"
+                                android:ellipsize="end"
                                 android:paddingBottom="2dp"
                                 android:paddingTop="10dp"
                                 android:gravity="start|top"
@@ -114,13 +118,15 @@
                     android:id="@+id/textViewOptions"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
+                    android:layout_gravity="end"
                     android:textColor="#484848"
                     android:paddingTop="7dp"
                     android:background="?android:attr/selectableItemBackground"
                     android:text="&#8942;"
                     android:textAppearance="?android:textAppearanceLarge" />
-            </LinearLayout>
+            </FrameLayout>
 
             <ImageButton
                 android:src="@drawable/arrow_down"

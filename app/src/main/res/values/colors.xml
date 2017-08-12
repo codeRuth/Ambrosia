@@ -9,4 +9,5 @@
     <color name="white">#fff</color>
     <color name="background">#dae2e2e2</color>
     <color name="switchOn">#00c853</color>
+    <color name="titleColor">#545454</color>
 </resources>

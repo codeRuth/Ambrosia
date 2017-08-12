@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.coderuth.ambrosia.ambrosia.R;
-import com.coderuth.ambrosia.ambrosia.adapter.SongAdapter;
+import com.coderuth.ambrosia.ambrosia.adapter.Task;
 import com.coderuth.ambrosia.ambrosia.models.Site;
 
 import java.util.ArrayList;
@@ -23,9 +23,9 @@ public class HomeFragment extends Fragment {
     private RecyclerView.LayoutManager mLayoutManager;
 
     private List<Site> songList;
-    private SongAdapter songAdapter;
+    private Task task;
 
-    String[] names = {"Karnataka Examination Authority", "7 Years", "Pillow Talk", "Work From Home", "Never Forget You", "Don't Let Me Down",
+    String[] names = {"Karnataka Examination Authority, Government of Karnataka", "The Android Arsenal - Badges - A categorized directory of libraries and tools for Android", "CardView: Expand & Collapse – Akshay Shinde – Medium", "Work From Home", "Never Forget You", "Don't Let Me Down",
             "Love Yourself", "Me, Myself & I", "Cake By The Ocean", "Dangerous Woman", "My House", "Stressed Out", "One Dance", "Middle", "No"};
 
     String[] singers = {"Last Checked 25 min. ago", "Last Checked 2 min. ago", "Last Checked 10 min. ago", "Fifth Harmony", "Zara Larsson & MNEK", "The Chainsmokers",
@@ -56,17 +56,16 @@ public class HomeFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
         songList = new ArrayList<>();
 
-        //adding data from arrays to songlist
         for (int i = 0; i < names.length; i++) {
-            Site song = new Site(names[i], singers[i], "kea.kar.nic.in/cet_2017.htm");
+            Site song = new Site(names[i], singers[i], "http://kea.kar.nic.in/cet_2017.htm");
             songList.add(song);
         }
         //initializing adapter
-        songAdapter = new SongAdapter(songList, getContext());
+        task = new Task(songList, getContext());
 
         //specifying an adapter to access data, create views and replace the content
-        mRecyclerView.setAdapter(songAdapter);
-        songAdapter.notifyDataSetChanged();
+        mRecyclerView.setAdapter(task);
+        task.notifyDataSetChanged();
 
 //        mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getActivity(), new RecyclerItemClickListener.OnItemClickListener() {
 //            @Override
