@@ -10,8 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.coderuth.ambrosia.ambrosia.R;
-import com.coderuth.ambrosia.ambrosia.adapter.Task;
-import com.coderuth.ambrosia.ambrosia.models.Site;
+import com.coderuth.ambrosia.ambrosia.models.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,13 +21,14 @@ public class HomeFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    private List<Site> songList;
-    private Task task;
+    private List<Task> songList;
+    private com.coderuth.ambrosia.ambrosia.adapter.Task task;
 
-    String[] names = {"Karnataka Examination Authority, Government of Karnataka", "The Android Arsenal - Badges - A categorized directory of libraries and tools for Android", "CardView: Expand & Collapse – Akshay Shinde – Medium", "Work From Home", "Never Forget You", "Don't Let Me Down",
+    String[] names = {"Karnataka Examination Authority, Government of Karnataka", "The Android Arsenal - Badges - A categorized directory of libraries and tools for Android", "CardView: Expand & Collapse – Akshay Shinde – Medium", "How to Run a Remote Desktop on Raspberry Pi with VNC", "Never Forget You", "Don't Let Me Down",
             "Love Yourself", "Me, Myself & I", "Cake By The Ocean", "Dangerous Woman", "My House", "Stressed Out", "One Dance", "Middle", "No"};
 
-    String[] singers = {"Last Checked 25 min. ago", "Last Checked 2 min. ago", "Last Checked 10 min. ago", "Fifth Harmony", "Zara Larsson & MNEK", "The Chainsmokers",
+    String[] singers = {"Last Checked 25 min. ago", "Last Checked 2 min. ago", "Last Checked 10 min. ago",
+            "Last Checked 45 min. ago", "Zara Larsson & MNEK", "The Chainsmokers",
             "Justin Bieber", "G-Eazy x Bebe Rexha", "DNCE", "Ariana Grande", "Flo Rida",
             "Twenty one Pilots", "Drake", "DJ Snake", "Meghan Trainer"};
 
@@ -57,11 +57,11 @@ public class HomeFragment extends Fragment {
         songList = new ArrayList<>();
 
         for (int i = 0; i < names.length; i++) {
-            Site song = new Site(names[i], singers[i], "http://kea.kar.nic.in/cet_2017.htm");
+            Task song = new Task(names[i], singers[i], "http://www.makeuseof.com/tag/run-remote-desktop-raspberry-pi-vnc/");
             songList.add(song);
         }
         //initializing adapter
-        task = new Task(songList, getContext());
+        task = new com.coderuth.ambrosia.ambrosia.adapter.Task(songList, getContext());
 
         //specifying an adapter to access data, create views and replace the content
         mRecyclerView.setAdapter(task);

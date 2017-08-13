@@ -1,14 +1,11 @@
 package com.coderuth.ambrosia.ambrosia.models;
 
-/**
- * Created by vamsi on 27-Apr-16.
- */
-public class Site {
+public class Task {
 
     private String name, singer, year, url;
     private int rank;
 
-    public Site(String name, String singer, String url){
+    public Task(String name, String singer, String url){
 
         this.name = name;
         this.singer = singer;

@@ -10,7 +10,7 @@
     <!-- A CardView that contains another views -->
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_view"
+        android:id="@+id/taskCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -26,7 +26,7 @@
             <FrameLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1">
                 <LinearLayout
                     android:layout_weight="6"
@@ -37,12 +37,13 @@
                     <TextView
                         android:paddingStart="10dp"
                         android:paddingTop="8dp"
+                        android:paddingEnd="20dp"
+                        android:textSize="12sp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView2"
-                        android:password="false"
+                        android:id="@+id/taskURL"
                         android:maxLines="1"
-                        android:autoLink="web" />
+                        android:ellipsize="end" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -59,7 +60,7 @@
                         <ImageView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:id="@+id/imageView"/>
+                            android:id="@+id/taskPreview"/>
                         <RelativeLayout
                             android:layout_marginStart="15dp"
                             android:layout_width="match_parent"
@@ -68,7 +69,7 @@
                             <LinearLayout
                                 android:orientation="horizontal"
                                 android:gravity="bottom"
-                                android:layout_below="@+id/title"
+                                android:layout_below="@+id/pageTitle"
                                 android:layout_marginTop="-1dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
@@ -77,10 +78,10 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     app:srcCompat="@drawable/history"
-                                    android:id="@+id/imageView2"/>
+                                    android:id="@+id/historyIcon"/>
 
                                 <TextView
-                                    android:id="@+id/category"
+                                    android:id="@+id/lastChecked"
                                     android:textSize="12sp"
                                     android:maxLines="1"
                                     android:layout_width="0dp"
@@ -93,13 +94,13 @@
                                 <android.support.v7.widget.SwitchCompat
                                     android:theme="@style/switchTheme"
                                     android:layout_weight="1"
-                                    android:id="@+id/switch1"
+                                    android:id="@+id/taskEnable"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"/>
                             </LinearLayout>
 
                             <TextView
-                                android:id="@+id/title"
+                                android:id="@+id/pageTitle"
                                 android:textColor="@color/titleColor"
                                 android:textSize="16sp"
                                 android:maxLines="2"
@@ -115,7 +116,7 @@
                     </LinearLayout>
                 </LinearLayout>
                 <TextView
-                    android:id="@+id/textViewOptions"
+                    android:id="@+id/taskOptions"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="10dp"
@@ -124,7 +125,7 @@
                     android:textColor="#484848"
                     android:paddingTop="7dp"
                     android:background="?android:attr/selectableItemBackground"
-                    android:text="&#8942;"
+                    android:text="@string/option_string"
                     android:textAppearance="?android:textAppearanceLarge" />
             </FrameLayout>
 
@@ -132,7 +133,7 @@
                 android:src="@drawable/arrow_down"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button"
+                android:id="@+id/showChanges"
                 android:background="?android:attr/selectableItemBackground" />
         </LinearLayout>
 

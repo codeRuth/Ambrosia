@@ -14,12 +14,12 @@ import android.widget.Toast;
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
 import com.coderuth.ambrosia.ambrosia.R;
-import com.coderuth.ambrosia.ambrosia.models.Site;
+
 import java.util.List;
 
 public class Task extends RecyclerView.Adapter<Task.ViewHolder> {
 
-    private List<Site> songList;
+    private List<com.coderuth.ambrosia.ambrosia.models.Task> songList;
     private Context mCtx;
     private PopupMenu popup;
     private ColorGenerator generator = ColorGenerator.MATERIAL;
@@ -30,15 +30,15 @@ public class Task extends RecyclerView.Adapter<Task.ViewHolder> {
 
         public ViewHolder(View v) {
             super(v);
-            tvRank = (TextView) v.findViewById(R.id.textView2);
-            tvSongName = (TextView) v.findViewById(R.id.title);
-            tvSinger = (TextView) v.findViewById(R.id.category);
-            letter = (ImageView) v.findViewById(R.id.imageView);
-            buttonOption = (TextView) v.findViewById(R.id.textViewOptions);
+            tvRank = (TextView) v.findViewById(R.id.taskURL);
+            tvSongName = (TextView) v.findViewById(R.id.pageTitle);
+            tvSinger = (TextView) v.findViewById(R.id.lastChecked);
+            letter = (ImageView) v.findViewById(R.id.taskPreview);
+            buttonOption = (TextView) v.findViewById(R.id.taskOptions);
         }
     }
 
-    public Task(List<Site> songList, Context mCtx){
+    public Task(List<com.coderuth.ambrosia.ambrosia.models.Task> songList, Context mCtx){
         this.songList = songList;
         this.mCtx = mCtx;
     }
@@ -52,7 +52,7 @@ public class Task extends RecyclerView.Adapter<Task.ViewHolder> {
 
     @Override
     public void onBindViewHolder(final Task.ViewHolder holder, final int position) {
-        Site song = songList.get(position);
+        com.coderuth.ambrosia.ambrosia.models.Task song = songList.get(position);
         String letter = String.valueOf(song.getName().charAt(0));
         popup = new PopupMenu(mCtx, holder.buttonOption);
         TextDrawable drawable = TextDrawable.builder().buildRound(letter, generator.getColor(song.getName()));
